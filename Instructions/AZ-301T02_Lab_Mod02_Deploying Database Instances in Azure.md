@@ -236,6 +236,8 @@
 
 #### Task 1: Deploy API App code using Azure Resource Manager templates and GitHub
 
+1. Download the **api.json** file from [Here](https://bigpopcat.z5.web.core.windows.net/CosmosDB-Lab.zip). Unzip and save **api.json** to your local machine.
+
 1. In the upper left corner of the Azure portal, click **Create a resource**.
 
 1. At the top of the **New** blade, in the **Search the Marketplace** text box, type **Template Deployment** and press **Enter**.
@@ -248,7 +250,7 @@
 
 1. On the **Edit template** blade, click the **Load file** link.
 
-1. In the **Open** file dialog that appears, navigate to the **\\allfiles\\AZ-301T02\\Module_02\\LabFiles\\Starter\\** folder.
+1. In the **Open** file dialog that appears, navigate to the **api.json** file you downloaded.
 
 1. Select the **api.json** file.
 
