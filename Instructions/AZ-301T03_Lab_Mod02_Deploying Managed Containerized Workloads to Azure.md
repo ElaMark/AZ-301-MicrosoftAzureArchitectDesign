@@ -18,28 +18,7 @@
 
 1. At the top of the portal, click the **Cloud Shell** icon to open a new shell instance.
 
-    > **Note**: The **Cloud Shell** icon is a symbol that is constructed of the combination of the *greater than* and *underscore* characters.
-
-1. If this is your first time opening the **Cloud Shell** using your subscription, you will see a wizard to configure **Cloud Shell** for first-time usage. When prompted, in the **Welcome to Azure Cloud Shell** pane, click **Bash (Linux)**.
-
-    > **Note**: If you do not see the configuration options for **Cloud Shell**, this is most likely because you are using an existing subscription with this course's labs. If so, proceed directly to the next task.
-
-1. In the **You have no storage mounted** pane, click **Show advanced settings**, perform the following tasks:
-
-    - Leave the **Subscription** drop-down list entry set to its default value.
-
-    - In the **Cloud Shell region** drop-down list, select the Azure region matching or near the location where you intend to deploy resources in this lab.
-
-    - In the **Resource group** section, ensure that the **Create new** option is selected and then, in the text box, type **AADesignLab0401-RG**.
-
-    - In the **Storage account** section, ensure that the **Create new** option is selected and then, in the text box below, type a unique name consisting of a combination of between 3 and 24 characters and digits.
-
-    - In the **File share** section, ensure that the **Create new** option is selected and then, in the text box below, type **cloudshell**.
-
-    - Click the **Create storage** button.
-
-1. Wait for the **Cloud Shell** to finish its first-time setup procedures before you proceed to the next task.
-
+   
 #### Task 3: Create an AKS cluster by using Cloud Shell
 
 1. At the **Cloud Shell** command prompt at the bottom of the portal, type in the following command and press **Enter** to create a variable which value designates the name of the resource group you will use in this task:
@@ -100,112 +79,9 @@
 > **Result**: After you complete this exercise, you should have successfully deployed a new AKS cluster.
 
 
-## Exercise 2: Managing an AKS cluster and its containerized workloads.
-
-#### Task 1: Deploy a containerized application to an AKS cluster
-
-1. In the Microsoft Edge window, in the Azure portal, at the **Cloud Shell** prompt, type the following command and press **Enter** in order to deploy the **nginx** image from the Docker Hub:
-
-    ```
-    kubectl run aad0402-akscluster --image=nginx --replicas=1 --port=80
-    ```
-
-    > **Note**: Make sure to use lower case letters when typing the name of the deployment. You will also receive a notification that this command is deprecated and will be removed in a future version, but successfully created the cluster.
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to verify that a Kubernetes pod has been created:
-
-    ```
-    kubectl get pods
-    ```
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to identify the state of the deployment:
-
-    ```
-    kubectl get deployment
-    ```
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to make the pod available from Internet:
-
-    ```
-    kubectl expose deployment aad0402-akscluster --port=80 --type=LoadBalancer
-    ```
-
-    > **Note**: Make sure to use lower case letters when typing the name of the deployment.
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to identify whether the public IP address has been provisioned:
-
-    ```
-    kubectl get service --watch
-    ```
-
-1. Wait until the value in the **EXTERNAL-IP** column for the **aad0402-akscluster** entry changes from **\<pending\>** to a public IP address, then press **Ctrl-C** key combination. Note the public IP address in the **EXTERNAL-IP** column for **aad0402-akscluster**.
-
-1. Start Microsoft Edge and browse to the IP address you obtained in the previous step. Verify that Microsoft Edge displays a web page with the **Welcome to nginx!** message.
 
 
-#### Task 2: Scaling containerized applications and AKS cluster nodes
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to scale the deployment:
-
-    ```
-    kubectl scale --replicas=2 deployment/aad0402-akscluster
-    ```
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to verify the outcome of scaling the deployment:
-
-    ```
-    kubectl get pods
-    ```
-
-    > **Note**: Review the output of the command and verify that the number of pods increased to 2.
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to scale out the number of cluster nodes:
-
-    ```sh
-    az aks scale --resource-group $RESOURCE_GROUP --name aad0402-akscluster --node-count 2
-    ```
-
-1. Wait for the provisioning of the additional node to complete.
-
-    > **Note**: This operation can take up to 10 minutes. If it fails, rerun the `az aks scale` command.
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to verify the outcome of scaling the cluster:
-
-    ```
-    kubectl get nodes
-    ```
-
-    > **Note**: Review the output of the command and verify that the number of nodes increased to 2.
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to scale the deployment:
-
-    ```
-    kubectl scale --replicas=10 deployment/aad0402-akscluster
-    ```
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to verify the outcome of scaling the deployment:
-
-    ```
-    kubectl get pods
-    ```
-
-    > **Note**: Review the output of the command and verify that the number of pods increased to 10.
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to review the pods distribution across cluster nodes:
-
-    ```
-    kubectl get pod -o=custom-columns=NODE:.spec.nodeName,POD:.metadata.name
-    ```
-
-    > **Note**: Review the output of the command and verify that the pods are distributed across both nodes.
-
-1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to delete the deployment:
-
-    ```
-    kubectl delete deployment aad0402-akscluster
-    ```
-
-## Exercise 3: Autoscaling pods in an AKS cluster
+## Exercise 2: Autoscaling pods in an AKS cluster
 
 #### Task 1: Deploy a Kubernetes pod by using a **.yaml** file.
 
