@@ -7,9 +7,7 @@
 
 #### Task 1: Open the Azure Portal
 
-1. On the Taskbar, click the **Microsoft Edge** icon.
-
-1. In the open browser window, navigate to the **Azure Portal** (<https://portal.azure.com>).
+1. Open a browser window and navigate to the **Azure Portal** (<https://portal.azure.com>).
 
 1. If prompted, authenticate with the user account account that has the owner role in the Azure subscription you will be using in this lab.
 
