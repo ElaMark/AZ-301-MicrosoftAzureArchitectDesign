@@ -49,23 +49,6 @@
 
     > **Note**: The **Cloud Shell** icon is a symbol that is constructed of the combination of the *greater than* and *underscore* characters.
 
-1. If this is your first time opening the **Cloud Shell** using your subscription, you will see a wizard to configure **Cloud Shell** for first-time usage. When prompted, in the **Welcome to Azure Cloud Shell** pane, click **Bash (Linux)**.
-
-    > **Note**: If you do not see the configuration options for **Cloud Shell**, this is most likely because you are using an existing subscription with this course's labs. If so, proceed directly to the next task.
-
-1. In the **You have no storage mounted** pane, click **Show advanced settings**, perform the following tasks:
-
-    - Leave the **Subscription** drop-down list entry set to its default value.
-
-    - In the **Cloud Shell region** drop-down list, select the Azure region matching or near the location that you selected earlier in this task.
-
-    - In the **Resource group** section, select the **Use existing** option and then, in the drop-down list, select **AADesignLab0701-RG**.
-
-    - In the **Storage account** section, ensure that the **Create new** option is selected and then, in the text box below, type a unique name consisting of a combination of between 3 and 24 characters and digits.
-
-    - In the **File share** section, ensure that the **Create new** option is selected and then, in the text box below, type **cloudshell**.
-
-    - Click the **Create storage** button.
 
 1. Wait for the **Cloud Shell** to finish its first-time setup procedures before you proceed to the next task.
 
