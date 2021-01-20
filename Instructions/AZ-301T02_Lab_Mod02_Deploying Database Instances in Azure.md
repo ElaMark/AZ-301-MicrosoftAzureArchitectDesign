@@ -239,15 +239,7 @@
 
 1. Back on the **Edit template** blade, click the **Save** button to persist the template.
 
-1. Back on the **Custom deployment** blade, perform the following tasks:
-
-    - Leave the **Subscription** drop-down list entry set to its default value.
-
-    - In the **Resource group** section, select the **Use existing** option and then, in the drop-down list, select **AADesignLab0701-RG**.
-
-    - In the **Terms and Conditions** section, click the **I agree to the terms and conditions stated above** checkbox.
-
-    - Click the **Purchase** button.
+1. Back on the **Custom deployment** blade, follow the process the create the resources.
 
 1. Wait for the deployment to complete before you proceed to the next task.
 
