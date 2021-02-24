@@ -48,6 +48,7 @@
 1. At the top of the portal, click the **Cloud Shell** icon to open a new shell instance.
 
     > **Note**: The **Cloud Shell** icon is a symbol that is constructed of the combination of the *greater than* and *underscore* characters.
+    > Ensure that you choose BASH  (not Powershell)
 
 
 1. Wait for the **Cloud Shell** to finish its first-time setup procedures before you proceed to the next task.
