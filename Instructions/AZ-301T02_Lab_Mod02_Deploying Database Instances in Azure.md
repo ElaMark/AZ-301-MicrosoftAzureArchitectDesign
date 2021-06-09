@@ -88,7 +88,7 @@
 1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to create a fixed collection named **MemberCollection** in the newly created database:
 
     ```sh
-    az cosmosdb sql container create --account-name <your-account-name-here> --database-name FinancialClubDatabase --name MemberCollection --partition-key-path '/firstName/lastName' --resource-group $RESOURCE_GROUP
+    az cosmosdb sql container create --account-name <your-cosmosdb-account-name-here> --database-name FinancialClubDatabase --name MemberCollection --partition-key-path '/firstName/lastName' --resource-group $RESOURCE_GROUP
     ```
 
 1. At the **Cloud Shell** command prompt, type in the following command and press **Enter** to display the value of the PRIMARY_KEY variable:
