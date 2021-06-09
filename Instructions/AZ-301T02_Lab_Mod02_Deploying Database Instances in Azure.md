@@ -23,13 +23,13 @@
 
 1. On the new **Azure Cosmos DB** blade, perform the following tasks:
 
+    - On the "Select API Option" Page press the "Create" button for "Core (SQL) - Recommended"
+    
     - Leave the **Subscription** drop-down list entry set to its default value.
 
     - Resource group: ensure that the **Create new** option is selected and then, in the text box, type **AADesignLab0701-RG**.
 
     - In the **Account Name** text box, type a globally unique value.
-
-    - In the **API** drop-down list, select the **Core (SQL)** option.
 
     - In the **Location** drop-down list, select the Azure region in which you want to deploy resources in this lab.
 
